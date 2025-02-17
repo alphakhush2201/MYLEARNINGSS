@@ -1,0 +1,27 @@
+from twilio.rest import Client
+import time
+
+# Twilio credentials
+account_sid = 'ACc60ec85f62ff4abfbf71ee258d037382'
+auth_token = 'f3482200fbf1f55e45b9a8ca43da9360'
+twilio_phone_number = '+19387770394'
+recipient_phone_number = '9720888267'
+
+# Create Twilio client
+client = Client(account_sid, auth_token)
+
+# Message to send
+message = "Nitesh Bahan ka loda h !"
+
+# Send messages continuously
+
+        # Send message
+message = client.messages.create(
+    body=message,
+    from_=twilio_phone_number,
+    to=recipient_phone_number
+        )
+print("Message sent successfully!")
+
+
+    # Wait for some time before sending the next message (e.g., every 60 seconds)=
